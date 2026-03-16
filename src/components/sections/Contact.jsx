@@ -3,7 +3,7 @@ import SectionHeading from '../ui/SectionHeading';
 import GlassCard from '../ui/GlassCard';
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../../utils/motion';
 import { personalInfo } from '../../data/personalInfo';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const contactItems = [
   {
@@ -14,7 +14,7 @@ const contactItems = [
     gradient: 'from-violet-500 to-purple-600',
   },
   {
-    icon: FaPhone,
+    icon: FaPhoneAlt,
     label: 'Phone',
     value: '+91 8650743567',
     href: 'tel:+918650743567',
