@@ -4,7 +4,7 @@ export const personalInfo = {
   name: 'Sunil Nagarkoti',
   tagline: 'Full-Stack Developer & Mobile App Developer',
   description:
-    'Results-driven Computer Applications professional with expertise in mobile app development, full-stack engineering, and database management. Skilled in building cross-platform applications with real-time features, REST API integration, AI/ML integration, and cloud services.',
+    'Computer Applications graduate specializing in mobile app development and full-stack engineering. I build cross-platform applications with Flutter, Firebase, and modern tools — focused on clean code, real-world functionality, and solid user experience.',
   location: 'Bageshwar, Uttarakhand, India',
   email: 'sunilsinghnagarkoti108@gmail.com',
   phone: '+91 8650743567',

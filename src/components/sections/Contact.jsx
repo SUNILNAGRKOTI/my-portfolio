@@ -52,7 +52,7 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto relative z-10">
         <SectionHeading
           title="Get In Touch"
-          subtitle="Feel free to reach out for collaborations, opportunities, or just a friendly chat"
+          subtitle="Here's how you can reach me"
           gradient="from-primary-400 via-pink-400 to-cyan-400"
         />
 

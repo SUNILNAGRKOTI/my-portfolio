@@ -1,9 +1,101 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import GlassCard from '../ui/GlassCard';
 import { fadeInUp, staggerContainer } from '../../utils/motion';
 import { projects } from '../../data/projects';
-import { HiExternalLink } from 'react-icons/hi';
+import { HiChevronLeft, HiChevronRight, HiX } from 'react-icons/hi';
+
+const ScreenshotGallery = ({ screenshots, gradient }) => {
+  const [lightbox, setLightbox] = useState(null);
+
+  return (
+    <>
+      {/* Horizontal scrollable gallery */}
+      <div className="mt-6 -mx-2">
+        <div className="flex gap-3 overflow-x-auto pb-3 px-2 scrollbar-thin">
+          {screenshots.map((src, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.03 }}
+              className="flex-shrink-0 cursor-pointer"
+              onClick={() => setLightbox(i)}
+            >
+              <div className={`rounded-xl overflow-hidden border border-white/10 hover:border-white/25 transition-all shadow-lg hover:shadow-xl`}>
+                <img
+                  src={src}
+                  alt={`Screenshot ${i + 1}`}
+                  className="h-52 w-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+            >
+              <HiX size={24} />
+            </button>
+
+            {/* Previous */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((prev) => (prev > 0 ? prev - 1 : screenshots.length - 1));
+              }}
+              className="absolute left-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+            >
+              <HiChevronLeft size={24} />
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={lightbox}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              src={screenshots[lightbox]}
+              alt={`Screenshot ${lightbox + 1}`}
+              className="max-h-[85vh] max-w-[90vw] object-contain rounded-xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Next */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightbox((prev) => (prev < screenshots.length - 1 ? prev + 1 : 0));
+              }}
+              className="absolute right-4 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+            >
+              <HiChevronRight size={24} />
+            </button>
+
+            {/* Counter */}
+            <div className="absolute bottom-4 text-white/60 text-sm">
+              {lightbox + 1} / {screenshots.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
 
 const Projects = () => {
   return (
@@ -13,7 +105,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <SectionHeading
           title="Featured Projects"
-          subtitle="Applications I've built that showcase my skills"
+          subtitle="Some things I've built"
           gradient="from-violet-400 to-pink-500"
         />
 
@@ -51,8 +143,13 @@ const Projects = () => {
                   {/* Description */}
                   <p className="text-gray-300 mb-4">{project.description}</p>
 
+                  {/* Screenshots Gallery */}
+                  {project.screenshots && project.screenshots.length > 0 && (
+                    <ScreenshotGallery screenshots={project.screenshots} gradient={project.gradient} />
+                  )}
+
                   {/* Highlights */}
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2 mb-6 mt-6">
                     {project.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-gray-400">
                         <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${project.gradient} mt-2 flex-shrink-0`} />

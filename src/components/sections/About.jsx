@@ -31,7 +31,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           title="About Me"
-          subtitle="Passionate about building digital experiences that make a difference"
+          subtitle="A bit about who I am and what I do"
           gradient="from-cyan-400 to-blue-500"
         />
 
@@ -44,15 +44,14 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              I'm a results-driven Computer Applications professional with deep expertise in
-              mobile app development, full-stack engineering, and database management. I love
+              I'm a Computer Applications graduate with hands-on experience in
+              mobile app development, full-stack engineering, and database management. I enjoy
               building cross-platform applications that solve real-world problems.
             </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              With experience in Flutter, Firebase, Java, Python, and modern development tools,
-              I focus on creating production-ready, user-centric software solutions. I'm certified
-              in Android Development by Meta and Data Science by IBM, and constantly learning
-              new technologies to stay at the cutting edge.
+              I work primarily with Flutter, Firebase, Java, and Python. I hold certifications
+              in Android Development (Meta) and Data Science (IBM), and I'm currently
+              pursuing my MCA at Chandigarh University.
             </p>
             <div className="flex items-center gap-2 text-gray-500">
               <FaMapMarkerAlt className="text-accent-pink" />

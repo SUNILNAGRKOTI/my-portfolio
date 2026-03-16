@@ -23,19 +23,10 @@ const Hero = () => {
           animate="visible"
           className="flex flex-col items-center text-center"
         >
-          {/* Greeting Badge */}
-          <motion.div
-            variants={fadeInUp}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm text-gray-400">Available for opportunities</span>
-          </motion.div>
-
           {/* Name */}
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 mt-8"
           >
             <span className="text-white">Hi, I'm </span>
             <span className="gradient-text bg-gradient-to-r from-primary-400 via-accent-pink to-accent-blue bg-300% animate-gradient-x">
