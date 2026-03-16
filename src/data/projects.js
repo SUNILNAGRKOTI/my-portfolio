@@ -1,4 +1,4 @@
-import { SiFlutter, SiDart, SiFirebase, SiPython, SiMysql, SiSqlite } from 'react-icons/si';
+import { SiFlutter, SiDart, SiFirebase, SiPython, SiMysql, SiFlask, SiScikitlearn } from 'react-icons/si';
 
 export const projects = [
   {
@@ -42,19 +42,27 @@ export const projects = [
     ],
   },
   {
-    title: 'Contact Management System',
-    subtitle: 'Desktop CRUD Application',
+    title: 'AI Productivity Intelligence Platform',
+    subtitle: 'ML-Powered Student Productivity Prediction System',
     description:
-      'A Python desktop application with full CRUD operations, advanced search capabilities, and automated backup functionality.',
+      'A full-stack machine learning web application that predicts student productivity based on daily habits and provides personalized recommendations.',
     highlights: [
-      'Full CRUD operations with advanced search using SQLite and Tkinter GUI',
-      'Normalized database schema with input validation and error handling',
-      'Efficient data retrieval algorithms and automated backup system',
+      'Built Python backend with Flask, exposing REST API for real-time productivity predictions',
+      'Trained Random Forest model with 85% accuracy using pandas, scikit-learn, and joblib',
+      'Implemented data preprocessing, feature engineering, and robust feature importance analysis',
+      'Designed interactive frontend with HTML, CSS, JavaScript and Chart.js data visualizations',
+      'Productivity classification (High/Medium/Low) with actionable suggestions for users',
     ],
-    techStack: ['Python', 'SQLite', 'Tkinter'],
-    techIcons: [SiPython, SiSqlite],
+    techStack: ['Python', 'Flask', 'scikit-learn', 'pandas', 'Chart.js', 'REST API', 'HTML/CSS/JS'],
+    techIcons: [SiPython, SiFlask, SiScikitlearn],
     gradient: 'from-cyan-600 to-blue-600',
-    category: 'Desktop App',
+    category: 'Web App',
+    screenshots: [
+      '/my-portfolio/screenshots/productivity-1.png',
+      '/my-portfolio/screenshots/productivity-2.png',
+      '/my-portfolio/screenshots/productivity-3.png',
+      '/my-portfolio/screenshots/productivity-4.png',
+    ],
   },
   {
     title: 'Nutrition Tracking System',
