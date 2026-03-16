@@ -1,0 +1,38 @@
+export const education = [
+  {
+    degree: 'Master of Computer Applications (MCA)',
+    institution: 'Chandigarh University',
+    location: 'Gharuan, Punjab',
+    period: '2024 - 2026',
+    grade: '',
+    gradient: 'from-violet-500 to-purple-600',
+    current: true,
+  },
+  {
+    degree: 'Bachelor of Computer Applications (BCA)',
+    institution: 'Graphic Era Hill University',
+    location: '',
+    period: '2021 - 2024',
+    grade: 'CGPA: 7.61',
+    gradient: 'from-cyan-500 to-blue-600',
+    current: false,
+  },
+  {
+    degree: 'Intermediate (XII)',
+    institution: 'JS Smarak GIC College, Kanda, Bageshwar',
+    location: '',
+    period: '2020 - 2021',
+    grade: '67.2% | UK Board',
+    gradient: 'from-emerald-500 to-teal-600',
+    current: false,
+  },
+  {
+    degree: 'High School (X)',
+    institution: 'VVM School, Kanda, Bageshwar',
+    location: '',
+    period: '2018 - 2019',
+    grade: '72.4% | UK Board',
+    gradient: 'from-orange-500 to-amber-600',
+    current: false,
+  },
+];
