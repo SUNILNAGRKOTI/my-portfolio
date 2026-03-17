@@ -1,45 +1,52 @@
+const spring = [0.16, 1, 0.3, 1];
+
 export const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 50, rotateX: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    rotateX: 0,
+    transition: { duration: 0.7, ease: spring },
   },
 };
 
 export const fadeInDown = {
-  hidden: { opacity: 0, y: -40 },
+  hidden: { opacity: 0, y: -50, rotateX: -10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    rotateX: 0,
+    transition: { duration: 0.7, ease: spring },
   },
 };
 
 export const fadeInLeft = {
-  hidden: { opacity: 0, x: -40 },
+  hidden: { opacity: 0, x: -60, rotateY: 10 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    rotateY: 0,
+    transition: { duration: 0.7, ease: spring },
   },
 };
 
 export const fadeInRight = {
-  hidden: { opacity: 0, x: 40 },
+  hidden: { opacity: 0, x: 60, rotateY: -10 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    rotateY: 0,
+    transition: { duration: 0.7, ease: spring },
   },
 };
 
 export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.7, rotateZ: -3 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    rotateZ: 0,
+    transition: { duration: 0.6, ease: spring },
   },
 };
 
